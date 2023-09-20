@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script>
 
@@ -21,40 +22,85 @@
                 document.getElementById("txtSoma").value = soma;
             }
         }
+        function calIMC() {
+            let valorA = document.getElementById("txtValorA").value;
+            let valorB = document.getElementById("txtValorB").value;
+            if (valorA == "") {
+                alert("Informe o valor A");
+            }
+            else if (valorB == "") {
+                alert("Informe o valor B");
+            }
+            else {
+                let IMC = Number(valorA) / (Number(valorB) * Number(valorB));
+                document.getElementById("txtIMC").value = IMC;
+                if(IMC<18.5){
+                    document.getElementById("class").value = "baixo peso";
+                    document.getElementById("class").style.backgroundColor = "blue"
+                    document.getElementById("class").style.color = "white"
+                }
+                else if(IMC >18.5 && IMC <24.9){
+                    document.getElementById("class").value = "peso adequado";
+                    document.getElementById("class").style.backgroundColor = "green"
+                    document.getElementById("class").style.color = "white"
+                }
+                else if(IMC >=24.9 && IMC<29.9){
+                    document.getElementById("class").value = "sobrepeso";
+                    document.getElementById("class").style.backgroundColor = "yellow"
+                    document.getElementById("class").style.color = "white"
+                }
+                else if(IMC >=29.9 && IMC<34.9){
+                    document.getElementById("class").value = "obesidade grau 1";
+                    document.getElementById("class").style.backgroundColor = "orange"
+                    document.getElementById("class").style.color = "white"
+                }
+                else if(IMC >=34.9 && IMC,39.9){
+                    document.getElementById("class").value = "obesidade grau 2";
+                    document.getElementById("class").style.backgroundColor = "darkorange"
+                    document.getElementById("class").style.color = "white"
+                }
+                else{
+                    document.getElementById("class").value = "obesidade grau 3";
+                    document.getElementById("class").style.backgroundColor = "red"
+                    document.getElementById("class").style.color = "white"
+                }
+            }
+        }
+        function classiIMC() {
 
+        }
         function limpar() {
-                document.getElementById("txtValorA").value = 0;
-                document.getElementById("txtValorB").value = 0;
-                document.getElementById("txtSoma").value = 0;
+            document.getElementById("txtValorA").value = 0;
+            document.getElementById("txtValorB").value = 0;
+            document.getElementById("txtSoma").value = 0;
+            document.getElementById("txtIMC").value = 0
+            document.getElementById("classiIMC").value = 0
         }
     </script>
 
-    <style>
-        input[type="button"]{
-            background-color: red;
-        }
-    </style>
 </head>
 
 <body>
     <form>
+        <h1>Calculadora IMC</h1>
         <div>
-            <label for="">Valor A</label>
+            <label for="">Peso</label><br>
             <input type="number" id="txtValorA">
         </div>
         <div>
-            <label for="">Valor B</label>
+            <label for="">Altura</label><br>
             <input type="number" id="txtValorB">
         </div>
         <div>
-            <label for="txtSoma">Soma: </label>
+            <label for="txtSoma">Soma: </label><br>
             <input type="number" name="" id="txtSoma" disabled><br>
-            <label for="IMC">Valor IMC: </label>
+            <label for="IMC">Valor IMC: </label><br>
             <input type="number" id="txtIMC" disabled><br>
-            <label for="classe">Classificação do IMC:</label>
+            <label for="classe">Classificação do IMC:</label><br>
             <input type="text" name="classiIMC" id="class" disabled>
         </div>
         <div>
+            <br>
             <input type="button" value="Somar" onclick="calcular_soma();">
             <input type="button" value="Calcular IMC" onclick="calIMC();">
             <input type="button" value="Limpar" onclick="limpar();">
