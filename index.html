@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function calcular_soma() {
+            let valorA = document.getElementById("txtValorA").value;
+            let valorB = document.getElementById("txtValorB").value;
+            if (valorA == "") {
+                alert("Informe o valor A");
+            }
+            else if (valorB == "") {
+                alert("Informe o valor B");
+            }
+            else {
+                let soma = Number(valorA) + Number(valorB);
+                document.getElementById("txtSoma").value = soma;
+            }
+        }
+
+        function limpar() {
+                document.getElementById("txtValorA").value = 0;
+                document.getElementById("txtValorB").value = 0;
+                document.getElementById("txtSoma").value = 0;
+        }
+    </script>
+
+    <style>
+        input[type="button"]{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="">Valor A</label>
+            <input type="number" id="txtValorA">
+        </div>
+        <div>
+            <label for="">Valor B</label>
+            <input type="number" id="txtValorB">
+        </div>
+        <div>
+            <label for="txtSoma">Soma: </label>
+            <input type="number" name="" id="txtSoma" disabled><br>
+            <label for="IMC">Valor IMC: </label>
+            <input type="number" id="txtIMC" disabled><br>
+            <label for="classe">Classificação do IMC:</label>
+            <input type="text" name="classiIMC" id="class" disabled>
+        </div>
+        <div>
+            <input type="button" value="Somar" onclick="calcular_soma();">
+            <input type="button" value="Calcular IMC" onclick="calIMC();">
+            <input type="button" value="Limpar" onclick="limpar();">
+        </div>
+    </form>
+</body>
+
+</html>
