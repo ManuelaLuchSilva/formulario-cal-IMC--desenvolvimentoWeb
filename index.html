@@ -8,20 +8,6 @@
     <title>Calculadora de IMC</title>
     <script>
 
-        function calcular_soma() {
-            let valorA = document.getElementById("txtValorA").value;
-            let valorB = document.getElementById("txtValorB").value;
-            if (valorA == "") {
-                alert("Informe o valor A");
-            }
-            else if (valorB == "") {
-                alert("Informe o valor B");
-            }
-            else {
-                let soma = Number(valorA) + Number(valorB);
-                document.getElementById("txtSoma").value = soma;
-            }
-        }
         function calIMC() {
             let valorA = document.getElementById("txtValorA").value;
             let valorB = document.getElementById("txtValorB").value;
@@ -66,9 +52,6 @@
                 }
             }
         }
-        function classiIMC() {
-
-        }
         function limpar() {
             document.getElementById("txtValorA").value = 0;
             document.getElementById("txtValorB").value = 0;
@@ -92,8 +75,6 @@
             <input type="number" id="txtValorB">
         </div>
         <div>
-            <label for="txtSoma">Soma: </label><br>
-            <input type="number" name="" id="txtSoma" disabled><br>
             <label for="IMC">Valor IMC: </label><br>
             <input type="number" id="txtIMC" disabled><br>
             <label for="classe">Classificação do IMC:</label><br>
