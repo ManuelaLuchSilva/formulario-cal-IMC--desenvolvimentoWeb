@@ -9,8 +9,24 @@ form{
     margin: 0 20%;
 }
 label, input[type="text"], input[type="number"]{
-    margin-left: 20%;
+    margin-left: 40%;
+    text-align: center;
 }
 body{
     background-color: rgb(209, 203, 169);
+}
+h1{
+    text-align: center;
+}
+@media (max-width: 728px) {
+    label, input[type="text"], input[type="number"]{
+        margin-left: 20%;
+    }
+    form{
+        background-color: rgb(255, 228, 196);
+        border: 1px solid rgb(236, 207, 171);
+        border-radius: 20px;
+        padding: 10px;
+        margin: 0;
+    }
 }
